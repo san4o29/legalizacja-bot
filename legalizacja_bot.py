@@ -5,8 +5,8 @@ from telegram.ext import Application, MessageHandler, CommandHandler, filters, C
 from dotenv import load_dotenv
 
 load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-openai.api_key = os.getenv("OPENAI_API_KEY")
+BOT_TOKEN = os.getenv("Legalnyi_bot")
+openai.api_key = os.getenv("")
 
 LANGUAGES = ['🇺🇦 Українська', '🇬🇧 English', '🇷🇺 Русский', '🇪🇸 Español', '🇮🇩 Bahasa Indonesia']
 
