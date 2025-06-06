@@ -26,7 +26,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await update.message.reply_text(response.choices[0].message.content)
 
-app = Application.builder().token(Telegram_bot).build()
+app = Application.builder().token(os.getenv("BOT_TOKEN")).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
