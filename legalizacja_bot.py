@@ -5,7 +5,7 @@ from telegram.ext import Application, MessageHandler, CommandHandler, filters, C
 from dotenv import load_dotenv
 
 load_dotenv()
-BOT_TOKEN = os.getenv("Legalnyi_bot")
+BOT_TOKEN = os.getenv("Telegram_bot")
 openai.api_key = os.getenv("")
 
 LANGUAGES = ['🇺🇦 Українська', '🇬🇧 English', '🇷🇺 Русский', '🇪🇸 Español', '🇮🇩 Bahasa Indonesia']
@@ -26,7 +26,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     )
     await update.message.reply_text(response.choices[0].message.content)
 
-app = Application.builder().token(Legalnyi_bot).build()
+app = Application.builder().token(Telegram_bot).build()
 app.add_handler(CommandHandler("start", start))
 app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
